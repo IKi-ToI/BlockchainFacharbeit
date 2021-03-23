@@ -27,10 +27,6 @@ public class TestBLockchain {
 					System.out.print("File Name: ");
 					String fileName = scn.next();
 					imprt(fileName);
-				} else if (input.toUpperCase().substring(0, 3).equals("EXP")) {
-					System.out.print("File Name: ");
-					String fileName = scn.next();
-					exprt(fileName);
 				} else if (input.toUpperCase().substring(0, 2).equals("PA")) {
 					padding();
 				} else if (input.toUpperCase().substring(0, 2).equals("GE")) {
@@ -45,10 +41,14 @@ public class TestBLockchain {
 				} else if (input.toUpperCase().substring(0, 2).equals("HE")) {
 					System.out.println(
 							"Possible Commands: NewBlockchain, AddBlock, GetBlock, Import, Export, Padding, Exit");
-				} else if (input.toUpperCase().substring(0, 3).equals("EXI")) {
-					System.exit(0);
 				} else if (input.toUpperCase().substring(0, 2).equals("CL")) {
 					clear();
+				} else if (input.toUpperCase().substring(0, 3).equals("EXP")) {
+					System.out.print("File Name: ");
+					String fileName = scn.next();
+					exprt(fileName);
+				} else if (input.toUpperCase().substring(0, 3).equals("EXI")) {
+					System.exit(0);
 				}
 			}
 		}
@@ -72,13 +72,13 @@ public class TestBLockchain {
 			System.out.println("\n" + getNonce(blck.get(i + 1), 1000000));
 		}
 
-		System.out.println(b1.getBlock());
+		/*System.out.println(b1.getBlock());
 		System.out.println(b2.getBlock());
 
 		// Automatisierte List Version
 		for (int i = 0; i < len - 2; i++) {
 			System.out.println(blck.get(i).getBlock());
-		}
+		}*/
 
 	}
 
@@ -89,7 +89,7 @@ public class TestBLockchain {
 		System.out.println(p.pad());
 		System.out.println(p.addLen() + "\n");
 	}
-	
+
 	public static void clear() {
 		blck.clear();
 	}
